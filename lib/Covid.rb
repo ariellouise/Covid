@@ -5,4 +5,4 @@ module Covid
   # Your code goes here...
 end 
 
-#all files into this file, putting into main executable ##CASES
+#all files into this file, putting into main executable case
