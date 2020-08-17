@@ -1,10 +1,17 @@
 class CLI 
-  attr_accessor #if needed 
+  #needs to greet user, needs to run (execute) needs a menu, exit 
   
-  def initialize
+  def greeting
+    puts "Welcome to your Covid-19 County Planner."
   end 
   
-  def self
+  def menu
+  end 
+  
+  def end_program
+    puts "Remember that regardless of whichever county you visit, you should regularly wash your hands, maintain 6 feet distance from others, and wear a mask. Goodbye!"
   end 
   
 end 
+
+#def method for each class 
