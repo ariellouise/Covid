@@ -1,22 +1,21 @@
 class CLI 
- 
- def run 
-   greeting
-   menu #returns user input
-   while menu != 'exit'
-   end 
-   end_program
- end 
- 
- 
-  def greeting
-    puts "Welcome to your Covid-19 County Planner."
+  def run 
+    greeting
+    menu
+    while menu != 'exit'
+    end 
+    end_program
+  end  
+  
+  def greeting 
+    puts "Welcome to your Covid-19 State & County Report."
   end 
   
-  def menu
-    puts "Please choose a state:"
+  def menu 
+    puts "To begin, please choose a state to see confirmed cases:"
     list_states
     input = gets.strip.downcase
+    choose_state(input)
     return input
   end 
   
@@ -25,7 +24,6 @@ class CLI
     2. Washington
     3. California
   end 
- 
- def end_program 
-   puts "Remember that regardless of whichever county you visit, you should regularly wash your hands, maintain 6 feet distance from others, and wear a mask. Goodbye!"
- end 
+  
+  def choose_state(input)
+  end 
