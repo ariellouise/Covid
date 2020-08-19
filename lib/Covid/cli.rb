@@ -1,5 +1,12 @@
 class CLI 
  
+ def run 
+   greeting
+   menu #returns user input
+   end_program
+ end 
+ 
+ 
   def greeting
     puts "Welcome to your Covid-19 County Planner."
   end 
