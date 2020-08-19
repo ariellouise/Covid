@@ -1,6 +1,6 @@
 # Covid
 
-This is a CLI Data Gem created for Flatiron. This will be edited more later. Checking git push
+This is a CLI Data Gem created for Flatiron. This will be edited more later. 
 
 ## Installation
 
