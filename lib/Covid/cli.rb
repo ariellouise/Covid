@@ -19,7 +19,7 @@ class CLI
       list_counties
     elsif input == "exit"
       end_program
-      
+    end 
   end 
  
  def list_states 
