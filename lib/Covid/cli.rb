@@ -3,6 +3,7 @@ class CLI
     greeting
     menu
     while menu != 'exit'
+    
     end 
     end_program
   end  
@@ -12,26 +13,24 @@ class CLI
   end 
   
   def menu 
-    puts "To begin, please choose a state to see confirmed cases:"
-    list_states
+    puts "To begin, please choose an option:"
+    list_options
     input = gets.strip.downcase
-    choose_state(input)
+    choose_option(input)
     return input
   end 
   
-  def list_states
-    1. New York 
-    2. Washington
-    3. California
+  def list_options
+    # THIS NEEDS A PRINT METHOD
+    1. List states to get individual statistics. 
+    2. List counties to get individual statistics.
   end 
   
-  def choose_state(option) #need the actual method
+  def choose_option(option) #need the actual method
     case option 
     when "1"
-      puts "You would like to view confirmed cases for New York."
+      puts "You would like to view a state's confirmed cases."
     when "2"
-      puts "You would like to view confirmed cases for Washington."
-    when "3"
-      puts "You would like to view confirmed cases for California."
+      puts "You would like to view a list of counties to see confirmed statistics."
     end 
   end 
