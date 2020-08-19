@@ -23,7 +23,7 @@ class CLI
   def list_options
     # THIS NEEDS A PRINT METHOD
     1. List states to get individual statistics. 
-    2. List counties to get individual statistics.
+    2. List counties to get individual statistics. 
   end 
   
   def choose_option(option) #need the actual method

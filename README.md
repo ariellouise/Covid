@@ -2,6 +2,8 @@
 
 This is a CLI Data Gem created for Flatiron. This will be edited more later. 
 
+What we want this CLI to do. --Give user a list of states they plan on visiting. Show user the confirmed cases for that state. Be able to narrow down  the state to the confirmed cases by county. 
+
 ## Installation
 
 Add this line to your application's Gemfile:
