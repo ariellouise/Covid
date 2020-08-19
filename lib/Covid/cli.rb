@@ -25,5 +25,13 @@ class CLI
     3. California
   end 
   
-  def choose_state(input)
+  def choose_state(option) #need the actual method
+    case option 
+    when "1"
+      puts "You would like to view confirmed cases for New York."
+    when "2"
+      puts "You would like to view confirmed cases for Washington."
+    when "3"
+      puts "You would like to view confirmed cases for California."
+    end 
   end 
