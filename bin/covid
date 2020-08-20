@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby 
 
-require "bin/setup"
+require "bundler/setup"
 require "covid"
 
-Covid::Menu.new.start #instantiate and call start, then never touch bin again#
+Covid::Menu.new.start 
