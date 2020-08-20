@@ -6,11 +6,9 @@ module Covid
     end 
     
     def main Menu
-      puts "What are you interested in the Covid Statistics of?"
+      puts "What county do you want to see results of?"
       
-      puts "1. New York State"
-      puts "2. New York State Counties"
-      puts "3. Exit"
+      puts ""
       
       puts "Enter Choice Number:"
       choice = gets.strip 
