@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby 
 require "bin/setup"
-require "covid"
+require "Covid"
 
