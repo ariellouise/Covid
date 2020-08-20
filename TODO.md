@@ -2,8 +2,9 @@ Stats interested in
 1) States
 2) United States
 
-1-
+1- usa_table_countries_today
 2- class="maincounter-number" => US Total cases #
+
 
 
 CovidStat.find_by_state(“state_name”).cases
