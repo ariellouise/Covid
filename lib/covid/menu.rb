@@ -24,7 +24,7 @@ module Covid
         california
       end 
       when "4"
-        puts "Thank You For using the Covid App, and remember to wash your hands!"
+        puts "Thank You For using the Covid App. Please emember to wash your hands!"
     end 
     
     def new_york
