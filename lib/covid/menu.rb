@@ -21,10 +21,22 @@ module Covid
       case "3"
         california
       end 
-      
     end 
     
-    def 
+    def new_york
+      puts "You asked for New York."
+      main_menu
+    end 
+    
+    def washington 
+      puts "You asked for Washington."
+      main_menu
+    end 
+    
+    def california 
+      puts "You asked for California."
+      main_menu
+    end 
     
   end 
 end 
