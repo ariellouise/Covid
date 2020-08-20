@@ -6,9 +6,9 @@ module Covid
     end 
     
     def main Menu
-      puts "What county do you want to see results of?"
-      
-      puts ""
+      puts "What 
+
+"
       
       puts "Enter Choice Number:"
       choice = gets.strip 
