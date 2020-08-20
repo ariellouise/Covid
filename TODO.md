@@ -1,8 +1,9 @@
 Stats interested in 
-1)States 
-2)Total tests by state
-3)Total cases by state
-4)Total Active cases by state 
+1) States
+2) United States
+
+1-
+2- class="maincounter-number" => US Total cases #
 
 
 CovidStat.find_by_state(“state_name”).cases
