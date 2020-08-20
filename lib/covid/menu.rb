@@ -6,39 +6,31 @@ module Covid
     end 
     
     def main Menu
-      puts "What State are you interested in the Covid Statistics of?"
+      puts "What are you interested in the Covid Statistics of?"
       
-      puts "1. New York"
-      puts "2. Washington"
-      puts "3. California"
-      puts "4. Exit"
+      puts "1. New York State"
+      puts "2. New York State Counties"
+      puts "3. Exit"
       
       puts "Enter Choice Number:"
       choice = gets.strip 
       
       case "1" 
-        new_york 
+        state
       when "2"
-        washington
+        counties
       when "3"
-        california
+        puts "Thank You For using the Covid App. Please remember to wash your hands!"
       end 
-      when "4"
-        puts "Thank You For using the Covid App. Please emember to wash your hands!"
     end 
     
-    def new_york
-      puts "You asked for New York."
+    def state
+      puts "You asked for the Covid statistics of New York."
       main_menu
     end 
     
-    def washington 
-      puts "You asked for Washington."
-      main_menu
-    end 
-    
-    def california 
-      puts "You asked for California."
+    def counties
+      puts "You asked for the Covid statistics of Counties in New York."
       main_menu
     end 
     
