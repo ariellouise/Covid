@@ -2,7 +2,7 @@ module Covid
   class Menu 
     
     def start 
-      main_menu
+         main_menu
     end 
     
     def main Menu

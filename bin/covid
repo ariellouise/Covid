@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby 
 
-require "bundler/setup"
-require "covid"
 
-Covid::Menu.new.start 
+puts "welcome times two"
