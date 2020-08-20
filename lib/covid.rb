@@ -1,5 +1,5 @@
-require_relative "Covid/version"
-require_relative "Covid/menu"
+require_relative "covid/version"
+require_relative "covid/menu"
 
 module Covid
   class Error < StandardError; end

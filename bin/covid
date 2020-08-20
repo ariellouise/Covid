@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby 
-require "bin/setup"
-require "Covid"
 
+require "bin/setup"
+require "covid"
+
+Covid::Menu.new.start #instantiate and call start, then never touch bin again#
