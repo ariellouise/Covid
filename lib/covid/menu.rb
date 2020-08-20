@@ -11,8 +11,9 @@ module Covid
       puts "1. New York"
       puts "2. Washington"
       puts "3. California"
+      puts "4. Exit"
       
-      puts "Enter Choice Number"
+      puts "Enter Choice Number:"
       choice = gets.strip 
       
       case "1" 
@@ -22,6 +23,8 @@ module Covid
       when "3"
         california
       end 
+      when "4"
+        puts "Thank You For using the Covid App, and remember to wash your hands!"
     end 
     
     def new_york
