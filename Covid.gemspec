@@ -1,16 +1,12 @@
-
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "Covid/version"
+require_relative 'lib/covid/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "Covid"
   spec.version       = Covid::VERSION
-  spec.authors       = ["'ariel murphy'"]
-  spec.email         = ["'arielladders@gmail.com'"]
+  spec.authors       = ["ariel murphy"]
+  spec.email         = ["arielladders@gmail.com"]
 
   spec.summary       = %q{Covid stats from the command line}
-  spec.description   = %q{}
   spec.homepage      = "https://www.github.com/ariellouise/Covid"
   spec.license       = "MIT"
 
@@ -37,8 +33,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "pry"
   spec.add_runtime_dependency "nokogiri"
 
 end
