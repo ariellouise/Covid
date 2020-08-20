@@ -10,7 +10,7 @@ CovidStat.find_by_state(“state_name”).cases
 
 Total confirmed cases => CovidStat.find_by_state(“state_name”).cases
 
-CovidStat (model)
+CovidStat (model) - what program does
 -pulling data from source 
 -parse
 -match user query
@@ -29,7 +29,7 @@ Data Endpoint: https://amazingshellyyy.com/covid19-api/US-CA/countyTimeseries.js
 
 >What state do you want to find confirmed cases of?
 Listing States => Confirmed.find_by_name(state_name)
-1.New York
+1. New York
 2. Washington
 3. California 
 
@@ -38,6 +38,3 @@ Listing Counties => Confirmed.find_by_county(county_name)
 County 1 
 County 2
 County 3 etc. 
-
-
-
