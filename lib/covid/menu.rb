@@ -2,6 +2,7 @@ module Covid
   class Menu 
     
     def start 
+      main_menu
     end 
     
     def main Menu
@@ -16,9 +17,9 @@ module Covid
       
       case "1" 
         new_york 
-      case "2"
+      when "2"
         washington
-      case "3"
+      when "3"
         california
       end 
     end 
