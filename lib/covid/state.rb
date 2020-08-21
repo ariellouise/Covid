@@ -1,19 +1,21 @@
-module Covid
+  
   class State 
     attr_accessor :name, :total_cases
     @@all = []
-    def self.load_data 
-      Covid::Scraper.new.load
-    end 
     
-    def self.find(name) 
-      state = @@all.detect{|s| s.name == name}
-    end 
-    
-    def save 
+    def initialize(name:, total_cases:)
+      @name = name 
+      @total_cases = total_cases 
       @@all << self 
+    end
+    
+    def self.all 
+      @@all 
+    end 
+    
+    def self.find_by_name(name)
+      @@all.find{|s| s.name == name} 
     end 
     
   end 
-end 
       
