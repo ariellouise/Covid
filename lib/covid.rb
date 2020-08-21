@@ -1,3 +1,7 @@
+require 'open-uri'
+require 'nokogiri'
+
+
 require_relative "covid/version"
 require_relative "covid/menu"
 require_relative "covid/state"
