@@ -7,11 +7,7 @@ module Covid
     end 
     
     def self.find(name) 
-      puts "You requested #{name}"
-      s = State.new 
-      s.name = 
-      s.total_cases = 
-      s
+      state = @@all.detect{|s| s.name == name}
     end 
     
     def save 
