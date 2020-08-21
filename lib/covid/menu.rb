@@ -29,7 +29,12 @@
     end 
     
     def states_menu
-      puts "You asked for the states menu to pick a state regarding their total Covid-19 cases."
+      puts "Enter a state name to find their total Covid-19 cases."
+      state_name = gets.strip
+      
+      state = Covid::State.find(state_name)
+      puts "#{state.name} has #{state.total_cases} total cases."
+      
       main_menu
     end 
   end 
