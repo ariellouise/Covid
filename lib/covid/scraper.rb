@@ -11,8 +11,8 @@ module Covid
         cases_column = table_row.search("td") [1]
         
         s = State.new 
-        s.name = name_column.strip 
-        s.total_cases = cases_column.strip 
+        s.name = name_column.text.strip 
+        s.total_cases = cases_column.text.strip 
         s.save
         
     end 
