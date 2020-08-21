@@ -2,6 +2,9 @@ module Covid
   class State 
     attr_accessor :name, :total_cases
     
+    def self.load_data 
+    end 
+    
     def self.find(name) 
       puts "You requested #{name}"
       s = State.new 
