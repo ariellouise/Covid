@@ -9,14 +9,17 @@
       puts "What statistics are you interested in?"
       puts "1. Total Cases for the United States."
       puts "2. Total Cases by state."
+      puts "3. Exit"
       
       puts "Enter your choice by typing the number:"
       choice = gets.strip
       
       if "1"
         us_stats
-      else "2"
+      elsif "2"
         states_menu
+      else "3"
+        puts "Remember to wash your hands and have a socially-distanced day!"
       end 
     end 
     
