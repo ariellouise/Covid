@@ -3,6 +3,7 @@ module Covid
     attr_accessor :name, :total_cases
     
     def self.load_data 
+      Covid::Scraper.new.load
     end 
     
     def self.find(name) 
