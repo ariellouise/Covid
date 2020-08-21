@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby 
+require_relative "../lib/covid/menu.rb"
 
 
-Covid::Menu.new.start
+menu.new.start

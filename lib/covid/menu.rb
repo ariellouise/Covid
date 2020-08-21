@@ -1,25 +1,22 @@
-module Covid 
+
   class Menu 
     
     def start 
-         main_menu
+      main_menu
     end 
     
-    def main Menu
+    def main_menu
       puts "What statistics are you interested in?"
       puts "1. Total Cases for the United States."
       puts "2. Total Cases by state."
-      puts "3. Exit"
       
       puts "Enter your choice by typing the number:"
       choice = gets.strip
       
-      case "1"
+      if "1"
         us_stats
-      when "2"
+      else "2"
         states_menu
-      when "3"
-        end_program
       end 
     end 
     
@@ -33,4 +30,3 @@ module Covid
       main_menu
     end 
   end 
-end 
