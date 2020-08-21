@@ -1,7 +1,7 @@
 module Covid
   class State 
     attr_accessor :name, :total_cases
-    
+    @@all = []
     def self.load_data 
       Covid::Scraper.new.load
     end 
@@ -12,6 +12,10 @@ module Covid
       s.name = 
       s.total_cases = 
       s
+    end 
+    
+    def save 
+      @@all << self 
     end 
     
   end 
