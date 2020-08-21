@@ -2,6 +2,8 @@
   class Menu 
     
     def start 
+      Covid::State.load_data
+      
       main_menu
     end 
     
