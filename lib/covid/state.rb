@@ -1,4 +1,13 @@
-class State 
+class State < Country
+  @@states = []
+  
+  def initialize(attributes)
+    super
+  end 
+  
+  def self.all
+    @@states 
+  end 
   
   def total_cases
     puts "#{self(state.name)} has #{self(state.total_cases)} total cases."
