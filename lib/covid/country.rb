@@ -1,17 +1,17 @@
 
-class Country
+#class Country
   
-  attr_accessor :name, :total_cases, :total_deaths, :total_recoveries
+  #attr_accessor :name, :total_cases, :total_deaths, :total_recoveries
   
-  @@countries = []
+ # @@countries = []
   
-  def initialize(attributes)
-    attributes.each {|key, value| self.send(("#{key}="), value)}
-    save
-  end 
+  #def initialize(attributes)
+   # attributes.each {|key, value| self.send(("#{key}="), value)}
+   # save
+ # end 
   
-  def self.all 
-    @@countries 
-  end 
+  #def self.all 
+  #  @@countries 
+ # end 
   
-end 
+#end 

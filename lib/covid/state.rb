@@ -1,14 +1,19 @@
 
 
-class State < Country
+class State 
+  attr_accessor :name, :total_cases, :total_deaths, :total_recoveries
   @@states = []
   
-  def initialize(attributes)
-    super
+  def initialize(name, total_cases, total_deaths, total_recoveries)
+    @name = name
+    @total_cases = total_cases
+    @total_deaths = total_deaths
+    @total_recoveries = total_recoveries
+    @@all << self
   end 
   
   def self.all
-    @@states 
+    @@all 
   end 
   
   def total_cases
