@@ -19,32 +19,35 @@ class Menu
   
   def list_options
     puts "What statistics are you interested in?"
-    puts "1. Total Covid Cases by state."
-    puts "2. Total Covid Deaths by state."
-    puts "3. Total Covid Recoveries by state."
-    puts "4. Exit program."
+    puts "1. List all states."
+    puts "2. Total Covid Cases by state."
+    puts "3. Total Covid Deaths by state."
+    puts "4. Total Covid Recoveries by state."
+    puts "5. Exit program."
   end 
   
   def choose_option(option)
     case option
     when "1"
+      State.print_all
+    when "2"
       puts "Total Covid Cases by state:"
       State.total_cases
-    when "2"
+    when "3"
       puts "Total Covid Deaths by state:"
       State.total_deaths
-    when "3"
+    when "4"
       puts "Total Covid Recoveries by state:"
       State.total_recoveries
-    when "4"
+    when "5"
       end_program
     end 
   end 
   
   
-  def error 
-    puts "Sorry, that answer was invalid. Please try again!"
-  end 
+  #def error 
+    #puts "Sorry, that answer was invalid. Please try again!"
+  #end 
   
   def end_program
     puts "Please remember to wash your hands and have a socially-distanced day!"
