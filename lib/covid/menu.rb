@@ -1,42 +1,52 @@
-
-  class Menu 
-    
-    def start 
-      Covid::State.load_data
-      
-      main_menu
-    end 
-    
-    def main_menu
-      puts "What statistics are you interested in?"
-      puts "1. Total Cases for the United States."
-      puts "2. Total Cases by state."
-      puts "3. Exit program."
-      
-      puts "Enter your choice by typing the number:"
-      choice = gets.strip
-      
-      case "1"
-        us_stats
-      when "2"
-        states_menu
-      when "3"
-        exit
-      end 
-    end 
-    
-    def us_stats 
-      puts "You wanted to know the total Covid-19 cases in the United States." 
-      main_menu
-    end 
-    
-    def states_menu
-      puts "Enter a state name to find their total Covid-19 cases."
-      state_name = gets.strip
-      
-      state = Covid::State.find(state_name)
-      puts "#{state.name} has #{state.total_cases} total cases."
-      
-      main_menu
+class Menu 
+  
+  def start 
+    greeting
+    menu 
+  end 
+  
+  def greeting 
+    puts "Welcome to the Covid-19 Statistic CLI."
+  end 
+  
+  def menu 
+    puts "Please choose an option:"
+    list_options 
+    input = gets.strip.downcase
+    choose_option(input)
+    return input
+  end 
+  
+  def list_options
+    puts "What statistics are you interested in?"
+    puts "1. Total Covid Cases by state."
+    puts "2. Total Covid Deaths by state."
+    puts "3. Total Covid Recoveries by state."
+    puts "4. Exit program."
+  end 
+  
+  def choose_option(option)
+    case option
+    when "1"
+      State.print_all
+    when "2"
+      puts "Total Covid Cases by state:"
+      State.total_cases
+    when "3"
+      puts "Total Covid Deaths by state:"
+      State.total_deaths
+    when "4"
+      end_program
     end 
   end 
+  
+  
+  def error 
+    puts "Sorry, that answer was invalid. Please try again!"
+  end 
+  
+  def end_program
+    puts "Please remember to wash your hands and have a socially-distanced day!"
+  end 
+  
+end 
