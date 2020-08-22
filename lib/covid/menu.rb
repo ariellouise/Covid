@@ -28,13 +28,14 @@ class Menu
   def choose_option(option)
     case option
     when "1"
-      State.print_all
-    when "2"
       puts "Total Covid Cases by state:"
       State.total_cases
-    when "3"
+    when "2"
       puts "Total Covid Deaths by state:"
       State.total_deaths
+    when "3"
+      puts "Total Covid Recoveries by state:"
+      State.total_recoveries
     when "4"
       end_program
     end 
