@@ -53,4 +53,8 @@ class Menu
     puts "Please remember to wash your hands and have a socially-distanced day!"
   end 
   
+  def scrape
+    scraper.scrape_states
+  end 
+  
 end 

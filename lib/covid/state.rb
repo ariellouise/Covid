@@ -1,4 +1,6 @@
-class State < Country
+
+
+class State 
   @@states = []
   
   def initialize(attributes)
@@ -22,7 +24,7 @@ class State < Country
   end 
   
   def find_by_name(state_name)
-    result = all.find {|state| state.name.downcase == {state_name}}
+    result = all.find {|state| state.name.downcase == state_name}
     if result
       puts "#{self.add_spaces(result.name)} has #{self.add_spaces(result.total_cases)} total cases, #{self.add_spaces(result.total_deaths)} total deaths, and #{self.add_spaces(result.total_recoveries)} total recoveries."
     else  
@@ -31,5 +33,5 @@ class State < Country
       input != 'exit' ? find_by_name(input) : nil 
     end 
     result
-  
+  end 
 end 

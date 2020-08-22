@@ -1,4 +1,4 @@
-require_relative "../lib/covid/scraper"
+
 
 class Scraper 
   URL = "https://www.worldometers.info/coronavirus/country/us/"
