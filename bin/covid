@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby 
-require_relative "../lib/covid/menu.rb"
-require_relative "../lib/covid/scraper.rb"
+ 
+ require_relative '../lib/covid'
+ 
 
-
-menu.new.start
+ 
+ Menu.new.start
