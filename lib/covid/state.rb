@@ -1,6 +1,6 @@
 
 
-class State 
+class State < Country
   @@states = []
   
   def initialize(attributes)
