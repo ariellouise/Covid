@@ -15,9 +15,9 @@ class Menu
   end 
   
   def menu 
-    puts " '"
+    puts " "
     puts "Please choose an option:" 
-    puts " '"
+    puts " "
     list_options 
     input = gets.strip.downcase
     choose_option(input)
@@ -39,10 +39,10 @@ class Menu
       State.all.each { |n| n.show_total_cases }
     when "2"
       puts "Total Covid Deaths by state:"
-      State.total_deaths
+      State.all.each { |n| n.show_total_deaths }
     when "3"
       puts "Total Covid Recoveries by state:"
-      State.total_recoveries
+      State.all.each { |n| n.show_total_recoveries }
     when "4"
       end_program
     end 
@@ -54,7 +54,9 @@ class Menu
   #end 
   
   def end_program
+    puts " "
     puts "Please remember to wash your hands and have a socially-distanced day!"
+    puts " "
   end 
   
   def scrape
