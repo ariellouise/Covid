@@ -3,6 +3,10 @@ class Menu
   def start 
     greeting
     menu 
+    scrape
+    while menu != 'exit'
+    end
+    end_program
   end 
   
   def greeting 
@@ -11,7 +15,9 @@ class Menu
   end 
   
   def menu 
-    puts "Please choose an option:"
+    puts " '"
+    puts "Please choose an option:" 
+    puts " '"
     list_options 
     input = gets.strip.downcase
     choose_option(input)
@@ -20,27 +26,24 @@ class Menu
   
   def list_options
     puts "What statistics are you interested in?"
-    puts "1. List all states."
-    puts "2. Total Covid Cases by state."
-    puts "3. Total Covid Deaths by state."
-    puts "4. Total Covid Recoveries by state."
-    puts "5. Exit program."
+    puts "1. Total Covid Cases by state."
+    puts "2. Total Covid Deaths by state."
+    puts "3. Total Covid Recoveries by state."
+    puts "4. Exit program."
   end 
   
   def choose_option(option)
     case option
     when "1"
-      State.print_all
-    when "2"
       puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
-    when "3"
+    when "2"
       puts "Total Covid Deaths by state:"
       State.total_deaths
-    when "4"
+    when "3"
       puts "Total Covid Recoveries by state:"
       State.total_recoveries
-    when "5"
+    when "4"
       end_program
     end 
   end 
