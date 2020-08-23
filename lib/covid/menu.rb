@@ -7,6 +7,7 @@ class Menu
   
   def greeting 
     puts "Welcome to the Covid-19 Statistic CLI."
+    scrape
   end 
   
   def menu 
@@ -32,7 +33,7 @@ class Menu
       State.print_all
     when "2"
       puts "Total Covid Cases by state:"
-      State.total_cases
+      State.all.each { |n| n.show_total_cases }
     when "3"
       puts "Total Covid Deaths by state:"
       State.total_deaths
@@ -54,7 +55,7 @@ class Menu
   end 
   
   def scrape
-    scraper.scrape_states
+    Scraper.scrape_states
   end 
   
 end 
