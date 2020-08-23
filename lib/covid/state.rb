@@ -1,5 +1,3 @@
-
-
 class State 
   attr_accessor :name, :total_cases, :total_deaths, :total_recoveries
   @@states = []
@@ -9,15 +7,15 @@ class State
     @total_cases = total_cases
     @total_deaths = total_deaths
     @total_recoveries = total_recoveries
-    @@all << self
+    @@states.push(self)
   end 
   
   def self.all
-    @@all 
-  end 
+    @@states
+  end
   
-  def total_cases
-    puts "#{self.add_spaces(state.name)} has #{self.add_spaces(state.total_cases)} total cases."
+  def show_total_cases
+    puts "#{self.name} has #{self.total_cases} total cases."
   end 
   
   def total_deaths
