@@ -7,6 +7,7 @@ class Menu
     while menu != 'exit'
     end
     end_program
+  
   end 
   
   def greeting 
@@ -45,6 +46,7 @@ class Menu
       State.all.each { |n| n.show_total_recoveries }
     when "4"
       end_program
+      exit
     end 
   end 
   
