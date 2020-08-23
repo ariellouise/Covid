@@ -1,8 +1,6 @@
 # Covid
 
-This is a CLI Data Gem created for Flatiron. This will be edited more later. 
-
-What we want this CLI to do. --Give user a list of states they plan on visiting. Show user the confirmed cases for that state. Be able to narrow down  the state to the confirmed cases by county. 
+This is a CLI Data Gem created for Flatiron. This CLI app will give you the total cases, deaths, and recoveries of COVID-19 for all 50 US states via scraping of Worldometer website. 
 
 ## Installation
 
@@ -20,9 +18,6 @@ Or install it yourself as:
 
     $ gem install Covid
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
