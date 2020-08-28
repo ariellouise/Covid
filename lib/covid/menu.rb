@@ -1,5 +1,12 @@
 class Menu 
   
+  #attr_accessor :state_index, :path
+  
+  #def initialize(path = "./Covid/state_index")
+   # @path = path 
+   # @state = State.new(path).import
+  #end 
+  
   def start 
     greeting
     menu 
@@ -27,24 +34,27 @@ class Menu
   
   def list_options
     puts "What statistics are you interested in?"
-    puts "1. Total Covid Cases by state."
-    puts "2. Total Covid Deaths by state."
-    puts "3. Total Covid Recoveries by state."
-    puts "4. Exit program."
+    puts "1. Choose an individual state."
+    puts "2. Total Covid Cases by state."
+    puts "3. Total Covid Deaths by state."
+    puts "4. Total Covid Recoveries by state."
+    puts "5. Exit program."
   end 
   
   def choose_option(option)
     case option
     when "1"
+      self.print_all(state_index)
+    when "2"
       puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
-    when "2"
+    when "3"
       puts "Total Covid Deaths by state:"
       State.all.each { |n| n.show_total_deaths }
-    when "3"
+    when "4"
       puts "Total Covid Recoveries by state:"
       State.all.each { |n| n.show_total_recoveries }
-    when "4"
+    when "5"
       end_program
       exit
     end 

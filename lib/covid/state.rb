@@ -1,4 +1,5 @@
 class State 
+  
   attr_accessor :name, :total_cases, :total_deaths, :total_recoveries
   @@states = []
   
@@ -13,6 +14,12 @@ class State
   def self.all
     @@states
   end
+  
+ # self.print_all(state_index) #added for instances
+   #list.each_with_index do |state, index|
+   #  puts "#{index + 1}. #{state.name}"
+   #end 
+ #end 
   
   def show_total_cases
     puts "#{self.name} has #{self.total_cases} total cases."

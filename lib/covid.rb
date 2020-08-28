@@ -6,7 +6,7 @@ require_relative "covid/version"
 require_relative "covid/menu"
 require_relative "covid/state"
 require_relative "covid/scraper"
-require_relative "covid/country"
+
 
 module Covid
   class Error < StandardError; end
