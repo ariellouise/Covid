@@ -38,7 +38,7 @@ class Menu
   def choose_option(option)
     case option
     when "1"
-      self.print_all
+      self.list_states
     when "2"
       puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
@@ -68,5 +68,13 @@ class Menu
   def scrape
     Scraper.scrape_states
   end 
+  
+  def list_states
+    State.all.each  do |state, index|
+      puts " #{index + 1}.#{state.name}  "
+    end
+  end
+
+  
   
 end 
