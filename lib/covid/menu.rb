@@ -70,11 +70,10 @@ class Menu
   end 
   
   def list_states
-    State.all.each  do |state, index|
-      puts " #{index + 1}.#{state.name}  "
+    State.all.each_with_index  do |state, i|
+      puts " #{i+1}. #{state.name}  "
+      puts ""
+      puts "Select a number for more information on that state."
     end
-  end
-
-  
-  
+  end 
 end 
