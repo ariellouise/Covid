@@ -3,7 +3,7 @@ class Menu
   
   def start 
     greeting
-    menu 
+    menu
     scrape
     while menu != 'exit'
     end
@@ -16,11 +16,11 @@ class Menu
     scrape
   end 
   
-  def menu 
+  def menu
     puts " "
     puts "Please choose an option:" 
     puts " "
-    list_options 
+    list_options
     input = gets.strip.downcase
     choose_option(input)
     return input
