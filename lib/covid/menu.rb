@@ -1,79 +1,31 @@
 class Menu 
-
+  attr_accessor :display, :options, :user_input, :end_program
   
-  def start 
-    greeting
-    menu
-    scrape
-    while menu != 'exit'
-    end
-    end_program
-  
+  def initialize(main_menu, state_menu)
+    @main_menu = main_menu
+    @state_menu = state_menu
   end 
   
-  def greeting 
-    puts "Welcome to the Covid-19 Statistic CLI."
-    scrape
+  def main_menu 
+    @main_menu 
   end 
   
-  def menu
-    puts " "
-    puts "Please choose an option:" 
-    puts " "
-    list_options
-    input = gets.strip.downcase
-    choose_option(input)
-    return input
+  def state_menu
+    @state_menu
   end 
   
-  def list_options
-    puts "What statistics are you interested in?"
-    puts "1. Choose an individual state."
-    puts "2. Total Covid Cases by state."
-    puts "3. Total Covid Deaths by state."
-    puts "4. Total Covid Recoveries by state."
-    puts "5. Exit program."
+  def display
+    @display
   end 
   
-  def choose_option(option)
-    case option
-    when "1"
-      self.list_states
-    when "2"
-      puts "Total Covid Cases by state:"
-      State.all.each { |n| n.show_total_cases }
-    when "3"
-      puts "Total Covid Deaths by state:"
-      State.all.each { |n| n.show_total_deaths }
-    when "4"
-      puts "Total Covid Recoveries by state:"
-      State.all.each { |n| n.show_total_recoveries }
-    when "5"
-      end_program
-      exit
-    end 
+  def options 
+    @options
   end 
   
-  
-  #def error 
-    #puts "Sorry, that answer was invalid. Please try again!"
-  #end 
+  def user_input 
+    @user_input
+  end 
   
   def end_program
-    puts " "
-    puts "Please remember to wash your hands and have a socially-distanced day!"
-    puts " "
+    @end_program
   end 
-  
-  def scrape
-    Scraper.scrape_states
-  end 
-  
-  def list_states
-    State.all.each_with_index  do |state, i|
-      puts " #{i+1}. #{state.name}  "
-      puts ""
-      puts "Select a number for more information on that state."
-    end
-  end 
-end 
