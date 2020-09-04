@@ -1,9 +1,13 @@
 class Menu 
-  attr_accessor :display, :options, :user_input, :end_program
+  attr_accessor :display, :options, :user_input, :end_program #behaviors
   
-  def initialize(main_menu, state_menu)
+  def initialize(main_menu, state_menu, display, options, user_input, end_program)
     @main_menu = main_menu
     @state_menu = state_menu
+    @display = display
+    @options = options 
+    @user_input = user_input
+    @end_program = end_program
   end 
   
   def main_menu 
@@ -14,33 +18,16 @@ class Menu
     @state_menu
   end 
   
-  def display=(display)
-    @display = display
-  end 
-  
   def display
     @display
-  end 
-  
-  def options=(options)
-    @options = options
   end 
   
   def options 
     @options
   end 
   
-  def user_input=(user_input)
-    @user_input = user_input 
-  end 
-  
   def user_input 
     @user_input
-  end 
-  
-  
-  def end_program=(end_program)
-    @end_program = end_program 
   end 
   
   def end_program
@@ -59,3 +46,6 @@ class Menu
       puts ""
      end
   end 
+end 
+
+#call on variable and print
