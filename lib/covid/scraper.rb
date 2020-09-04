@@ -15,4 +15,15 @@ class Scraper
     end 
   end
   
+  def self.scrape_state_details 
+    state.name 
+    
+    state.total_cases 
+    
+    state.total_deaths 
+    
+    state.total_recoveries 
+  
+  end 
+  
 end 
