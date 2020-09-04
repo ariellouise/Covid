@@ -23,7 +23,39 @@ class Menu
   end 
   
   def menu 
+    display_states
+      puts "Select the number of the state you would like statistics on."
+    
+    input = gets.strip.to_i
+    
+    if input between?(0, number_of_states -1)
+      index = input
+      
+      state = 
+      scrape_state_details(state)
+      puts "The statistics for #{state.name}:"
+      puts " "
+      puts "The total number of cases for #{state.name} is : #{state_total_cases}."
+      puts " "
+      puts "The total number of deaths for #{state.name} is : #{state_total_deaths}."
+      puts " "
+      puts "The total number of recoveries for #{state.name} is : #{state_total_recoveries}."
+      
+      list_states 
+      
+    else 
+      exit_program 
+    end 
+  end
+  
+  def end_program
+     puts " "
+    puts "Please remember to wash your hands and have a socially-distanced day!"
+    puts " "
   end 
+  
+end 
+
   
   def end_program
   end 
