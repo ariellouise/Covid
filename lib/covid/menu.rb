@@ -25,7 +25,7 @@ class Menu
   end 
   
   def user_input(main_menu)
-    case option
+    case user_input
     when "1"
       self.list_states
     when "2"
@@ -45,10 +45,30 @@ class Menu
 
   
   def state_menu
-    @state_menu
+    puts "1. Total Covid Cases for the state."
+    puts "2. Total Covid Deaths for the state."
+    puts "3. Total Covid Recoveries for the state."
+    puts "4 Return to the Main Menu."
+    puts "5. Exit program."
   end 
   
-  def 
+  def user_input(state_menu)
+    case user_input 
+    when "1"
+      puts "Total cases for the state:"
+      #pull total cases for each state 
+    when "2"
+      puts "Total deaths for the state:"
+      #pull total deaths for each state 
+    when "3"
+      puts "Total recoveries for the state:"
+      #put total recoveries for the state
+    when "4" 
+      main_menu 
+    when "5"
+    end_program 
+  end 
+
   
   def display
     @display
