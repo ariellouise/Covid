@@ -1,8 +1,7 @@
 class Menu
   
   def call 
-    Scraper.state_name 
-    Scraper.state_details
+    scrape
     puts " "
     puts "Welcome to the Covid-19 Statistics CLI."
     puts " "
@@ -13,7 +12,7 @@ class Menu
   def list_states
     State.all.each_with_index  do |state, i|
     puts " #{i+1}. #{state.name}  "
-    puts ""
+    puts " "
     end
   end 
   
@@ -55,5 +54,9 @@ class Menu
       puts "Sorry, that answer was invalid. Please try again!"
       puts " "
     end 
+  end 
+  
+  def scrape
+    scraper.scrape_states
   end 
 end 
