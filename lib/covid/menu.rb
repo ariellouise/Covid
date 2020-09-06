@@ -25,7 +25,21 @@ class Menu
         selection = nil 
         
         while selection != "exit"
-          puts "You have selected #{state.name}. To view the total cases by state, type 'total.' TO view deaths by state, type 'deaths'. To view recoveries by state, type 'recoveries'. You may also type 'exit' to leave the program." 
+          puts "You have selected #{state.name}. To view the total cases by state, type 'total.' To view deaths by state, type 'deaths'. To view recoveries by state, type 'recoveries'. You may also type 'exit' to leave the program." 
+          selection = gets.strip.downcase
+            if selection == 'total'
+              puts state.total_cases 
+            elseif selection == 'deaths'
+              puts state.total_deaths 
+            elseif selection == 'recoveries'
+              puts state.total_recoveries 
+            else selection == 'exit'
+              exit 
+            end 
+          end 
+        end 
+        
+        
  
  
  
