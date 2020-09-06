@@ -1,53 +1,62 @@
-class Menu 
+class Menu
   
-  def start 
-   puts "Welcome to the Covid-19 Statistic CLI." 
-   scrape 
-   list_states 
-   menu 
- end 
+  def call 
+    Scraper.state_name 
+    Scraper.state_details
+    puts " "
+    puts "Welcome to the Covid-19 Statistics CLI."
+    puts " "
+    list_states 
+    start 
+  end
   
   def list_states
     State.all.each_with_index  do |state, i|
-      puts " #{i+1}. #{state.name}  "
-      puts ""
+    puts " #{i+1}. #{state.name}  "
+    puts ""
     end
   end 
   
-  def menu 
-    input = nil 
-    while input != "exit"
-      puts "If you would like to see Covid Statistics on a state, please type in the state number. You may also type exit, to leave the program."
-      input = gets.strip.downcase 
-      
-      if input_to_i > 0 && input.to_i.between(1, @states.length)
-        state = @state[input.to_i - 1]
-        selection = nil 
-        
-        while selection != "exit"
-          puts "You have selected #{state.name}. To view the total cases by state, type 'total.' To view deaths by state, type 'deaths'. To view recoveries by state, type 'recoveries'. You may also type 'exit' to leave the program." 
-          selection = gets.strip.downcase
-            if selection == 'total'
-              puts state.total_cases 
-            elseif selection == 'deaths'
-              puts state.total_deaths 
-            elseif selection == 'recoveries'
-              puts state.total_recoveries 
-            else selection == 'exit'
-              exit 
-            end 
-          end 
-        end 
-        
-        
- 
- 
- 
- 
- 
-  def scrape
-    Scraper.scrape_states
+  def start 
+    puts " " 
+    puts "Which state would you like to see the statistics of first?"
+    puts "1. The list of states"
+    puts "2. A list of total Covid-19 cases."
+    input = gets.strip.downcase
+    if input == "1"
+      self.list_states 
+    else input == "2"
+       puts "Total Covid Cases by state:"
+      State.all.each { |n| n.show_total_cases }
+    end 
   end 
   
+  def display_details(details)
+    puts " "
+    puts "#{state.name}"
+    puts " "
+    puts "Total Cases:    #{details.total_cases}"
+    puts "Total Deaths:   #{details.total_deaths}" 
+    puts "Total Recoveries:     #{details.total_recoveries}"
+    puts " "
+    
+    puts "Would you like statistics? Enter 'yes', 'no', or 'exit.'"
+    
+    if input == == "yes"
+      puts "Case Details: #{state.description}"
+      puts " "
+    elseif input == "no"
+      start
+    elseif input == "exit"
+      puts " "
+      puts "Please remember to wash your hands and have a socially-distanced day!"
+      puts " "
+      exit 
+    else 
+    
+    
+  
 
-
+  
+  
+end 
