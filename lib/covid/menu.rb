@@ -35,15 +35,13 @@ class Menu
     puts " "
     puts "#{state.name}"
     puts " "
-    puts "Total Cases:    #{details.total_cases}"
-    puts "Total Deaths:   #{details.total_deaths}" 
-    puts "Total Recoveries:     #{details.total_recoveries}"
-    puts " "
-    
     puts "Would you like statistics? Enter 'yes', 'no', or 'exit.'"
     
     if input == == "yes"
-      puts "Case Details: #{state.description}"
+      puts " "
+      puts "Total Cases:    #{details.total_cases}"
+      puts "Total Deaths:   #{details.total_deaths}" 
+      puts "Total Recoveries:     #{details.total_recoveries}"
       puts " "
     elseif input == "no"
       start
@@ -53,8 +51,13 @@ class Menu
       puts " "
       exit 
     else 
-    
-    
+      puts " "
+      puts "Sorry, that answer was invalid. Please try again!"
+      puts " "
+    end 
+  end 
+end 
+
   
 
   
