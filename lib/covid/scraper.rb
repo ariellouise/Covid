@@ -14,16 +14,4 @@ class Scraper
       State.new(state_name,total_cases,total_deaths,total_recoveries)
     end 
   end
-  
-  def self.scrape_state_details 
-    state.name 
-    
-    state.total_cases 
-    
-    state.total_deaths 
-    
-    state.total_recoveries 
-  
-  end 
-  
 end 
