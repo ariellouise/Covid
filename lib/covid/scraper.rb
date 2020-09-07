@@ -1,8 +1,7 @@
 class Scraper 
   URL = "https://www.worldometers.info/coronavirus/country/us/"
   
-  def self.scrape_states_details
-    page = self.get_states_array
+  def self.scrape_states
     
     covid_doc = Nokogiri::HTML(open(URL))
     states_array = covid_doc.css("tbody tr")
@@ -14,17 +13,5 @@ class Scraper
       State.new(state_name,total_cases,total_deaths,total_recoveries)
     end 
   end
-  
-  
-  def self.scrape_states
-    page = self.get_states_array
-    states_array[1..51].each do |state_row_data|
-      state_name = state_row_data.css("td")[1].text.split(" ").join(" ")
-    end 
-  end 
-  
 end 
-
-
-
 
