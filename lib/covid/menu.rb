@@ -25,7 +25,7 @@ class Menu
     if input == "1"
       self.list_states 
     else input == "2"
-       puts "Total Covid Cases by state:"
+      puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
     end 
   end 
@@ -36,7 +36,7 @@ class Menu
     puts " "
     puts "Would you like statistics? Enter 'yes', 'no', or 'exit.'"
     
-    if input == == "yes"
+    if input == "yes"
       puts " "
       puts "Total Cases:    #{details.total_cases}"
       puts "Total Deaths:   #{details.total_deaths}" 
@@ -49,7 +49,7 @@ class Menu
       puts "Please remember to wash your hands and have a socially-distanced day!"
       puts " "
       exit 
-    else 
+    elsif 
       puts " "
       puts "Sorry, that answer was invalid. Please try again!"
       puts " "

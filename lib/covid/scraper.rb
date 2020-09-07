@@ -1,5 +1,3 @@
-
-
 class Scraper 
   URL = "https://www.worldometers.info/coronavirus/country/us/"
   
@@ -22,6 +20,11 @@ class Scraper
     page = self.get_states_array
     states_array[1..51].each do |state_row_data|
       state_name = state_row_data.css("td")[1].text.split(" ").join(" ")
+    end 
   end 
   
 end 
+
+
+
+
