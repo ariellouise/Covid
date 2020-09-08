@@ -7,7 +7,6 @@ class Menu
     puts " "
     start 
   end 
-
   
   def start 
     puts " "
@@ -15,7 +14,7 @@ class Menu
     puts " "
     input = gets.strip
     if input == "yes"
-      list_states
+    self.list_states
       
     elsif input == "no"
       puts " Please type exit to leave"
@@ -25,10 +24,9 @@ class Menu
       puts "Your input was not valid. Please try again."
       start 
     end 
-    
-    puts "Here is a list of states: "
+    puts "Here is a list of states- Please choose a state to see it's statistics."
     puts " "
-    list_states
+    self.list_states
     input = gets.strip.downcase
     
     if input == "yes"
