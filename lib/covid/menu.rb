@@ -67,11 +67,11 @@ class Menu
   end 
   
   def state_menu
-    puts "You asked for each individual state."
-    main_menu
+     puts "Please enter the state name you like to find"
+     input = gets.strip.downcase.to_str
+     State.find_by_name(input)
+     main_menu
   end 
-  
-  
   
   def scrape
     Scraper.scrape_states
