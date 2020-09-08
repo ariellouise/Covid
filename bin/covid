@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby 
  
  require_relative '../lib/covid'
- 
 
  
- Menu.new.start
+
+Menu.new.call

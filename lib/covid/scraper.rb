@@ -12,6 +12,6 @@ class Scraper
       total_recoveries =(state_row_data.css("td")[6].text).to_i
       State.new(state_name,total_cases,total_deaths,total_recoveries)
     end 
-  end
+  end 
+  
 end 
-
