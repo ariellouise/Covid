@@ -1,85 +1,86 @@
-class Menu
+class Menu 
 
-  def call 
-    Scraper
-    puts " "
-    puts "Welcome to the Covid-19 Statistic CLI."
-    puts " "
-    start 
-  end 
   
   def start 
-    puts " "
-    puts "Would you like to see a list of states currently with data?"
-    puts " "
-    input = gets.strip
-    if input == "yes"
-    self.list_states
-      
-    elsif input == "no"
-      puts " Please type exit to leave"
-      
-    else 
-      puts " "
-      puts "Your input was not valid. Please try again."
-      start 
-    end 
-    puts "Here is a list of states- Please choose a state to see it's statistics."
-    puts " "
-    self.list_states
-    input = gets.strip.downcase
-    
-    if input == "yes"
-      start
-    else 
-      puts "Please remember to wash your hands and have a socially-distanced day!"
-      exit 
-    end 
+    greeting
+    menu
+    scrape
+    while menu != 'exit'
+    end
+    end_program
+  
   end 
   
-  def display_states(state)
-    puts " #{state.name}"
+  def greeting 
+    puts "Welcome to the Covid-19 Statistic CLI."
+    scrape
+  end 
+  
+  def menu
     puts " "
-    puts "Total Cases: #{state.total_cases}"
-    puts "Total Deaths: #{state.total_deaths}"
-    puts "Total Recoveries: #{state.total_recoveries}"
+    puts "Please choose an option:" 
     puts " "
-    
-    puts "Would you like to see total statistics for multiple states? PLease enter 'yes' or 'no', or 'exit' to leave."
-    input = gets.strip.downcase 
-    
-    if input == "yes" 
-      puts " "
-      puts " Total cases by state:"
+    list_options
+    input = gets.strip.downcase
+    choose_option(input)
+    return input
+  end 
+  
+  def list_options
+    puts "What statistics are you interested in?"
+    puts "1. See a list of states with statistics."
+    puts "2. See statistics by state individually."
+    puts "3. Total Covid Cases by state."
+    puts "4. Total Covid Deaths by state."
+    puts "5. Total Covid Recoveries by state."
+    puts "6. Exit program."
+  end 
+  
+  def choose_option(option)
+    case option
+    when "1"
+      self.list_states
+    when "2"
+      state_menu
+    when "3"
+      puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
-      puts " "
-    elsif input == "no"
-      start 
-    elsif input == "exit" 
-      puts " "
-      puts "Please remember to wash your hands and have a socially distanced day!"
-      puts " "
-      exit 
-    else 
-      puts " "
-      puts "I'm sorry, that's an invalid option. Please try again with 'yes', 'no', or 'exit'."
-      display_states 
+    when "4"
+      puts "Total Covid Deaths by state:"
+      State.all.each { |n| n.show_total_deaths }
+    when "5"
+      puts "Total Covid Recoveries by state:"
+      State.all.each { |n| n.show_total_recoveries }
+    when "6"
+      end_program
+      exit
     end 
+  end 
+   #def error 
+    #puts "Sorry, that answer was invalid. Please try again!"
+  #end 
+  
+  def end_program
+    puts " "
+    puts "Please remember to wash your hands and have a socially-distanced day!"
+    puts " "
+  end 
+  
+  def state_menu
+    puts "You asked for each individual state."
+    main_menu
+  end 
+  
+  
+  
+  def scrape
+    Scraper.scrape_states
   end 
   
   def list_states
     State.all.each_with_index  do |state, i|
-    puts " #{i+1}. #{state.name}  "
-    puts " "
-    end
+      puts " #{i+1}. #{state.name}  "
+      puts ""
+     end
   end 
-  
-  def scrape
-    scraper.scrape_states
-  end 
-
-
-  
-  
 end 
-    

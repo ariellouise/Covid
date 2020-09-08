@@ -13,5 +13,4 @@ class Scraper
       State.new(state_name,total_cases,total_deaths,total_recoveries)
     end 
   end 
-  
 end 
