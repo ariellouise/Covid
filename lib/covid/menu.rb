@@ -41,7 +41,7 @@ class Menu
     when "1"
       self.list_states
     when "2"
-      state_menu
+      State_menu
     when "3"
       puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
@@ -66,12 +66,6 @@ class Menu
     puts " "
   end 
   
-  def state_menu
-     puts "Please enter the state name you like to find"
-     input = gets.strip.downcase.to_str
-     State.find_by_name(input)
-     main_menu
-  end 
   
   def scrape
     Scraper.scrape_states
@@ -82,5 +76,41 @@ class Menu
       puts " #{i+1}. #{state.name}  "
       puts ""
      end
+  end 
+end 
+
+class State_menu
+  
+ def state_menu
+     puts "Please enter the state name you like to find"
+     input = gets.strip.downcase.to_str
+     State.find_by_name(input)
+     main_menu
+  end 
+  
+  def state_menu 
+    puts " "
+    puts "Please choose an option:" 
+    puts " "
+    list_options_state
+    input = gets.strip.downcase
+    choose_state_option(input)
+    return input
+  end 
+  
+  def list_options_state
+    puts "What statistics are you interested in?"
+    puts "1. See a list of states with statistics."
+  end 
+  
+  def choose_state_option(option)
+    case option
+    when "1"
+      self.list_states
+      puts "Total Covid Cases by state:"
+      State.all.each { |n| n.show_total_cases }
+      end_program
+      exit
+    end 
   end 
 end 
