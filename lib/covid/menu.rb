@@ -2,6 +2,7 @@ class Menu
 
   
   def start 
+    @state_menu = State_menu.new
     greeting
     menu
     scrape
@@ -41,7 +42,10 @@ class Menu
     when "1"
       self.list_states
     when "2"
-      State_menu
+      State_menu.new.find_by_name
+      @state_menu.find_by_name
+      when "3"
+      State_menu.new.find_by_name
     when "3"
       puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
@@ -79,20 +83,17 @@ class Menu
   end 
 end 
 
+
 class State_menu
+  @state_name_save
   
-  def state_menu
-     puts "Please enter the state name you like to find"
-     input = gets.strip.downcase.to_str
-     return input
-     State.find_by_name(input)
-     main_menu
-  end 
-  
-  def find_by_name(state_name)
-      result = all.find {|state| state.name.downcase == state_name}
-      if result 
-         puts " Your state #{state_name} has #{state_total_cases} total cases, #{state_total_deaths} total deaths, and #{state_total_recoveries} total recoveries." 
+  def find_by_name
+      puts "Please enter the state name you like to find"
+      state_name = gets.strip.downcase.to_str
+      @state_name_save = state_name
+      found_state = State.all.find {|state| state.name.downcase == state_name}
+      if found_state 
+         puts " Your state #{found_state.name} has #{result.total_cases} total cases, #{result.total_deaths} total deaths, and #{result.total_recoveries} total recoveries." 
          puts " "
       else 
          puts "#{state_name} does not exist."
