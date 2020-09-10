@@ -42,9 +42,8 @@ class Menu
     when "1"
       self.list_states
     when "2"
-      State_menu.new.find_by_name
       @state_menu.find_by_name
-      when "3"
+    when "3"
       State_menu.new.find_by_name
     when "3"
       puts "Total Covid Cases by state:"
@@ -85,15 +84,13 @@ end
 
 
 class State_menu
-  @state_name_save
   
   def find_by_name
       puts "Please enter the state name you like to find"
       state_name = gets.strip.downcase.to_str
-      @state_name_save = state_name
       found_state = State.all.find {|state| state.name.downcase == state_name}
       if found_state 
-         puts " Your state #{found_state.name} has #{result.total_cases} total cases, #{result.total_deaths} total deaths, and #{result.total_recoveries} total recoveries." 
+         puts " Your state #{found_state.name} has #{found_state.total_cases} total cases, #{found_state.total_deaths} total deaths, and #{found_state.total_recoveries} total recoveries." 
          puts " "
       else 
          puts "#{state_name} does not exist."
@@ -101,7 +98,7 @@ class State_menu
          input = gets.strip.downcase.to_str
          input != 'exit' ? find_by_name(input) : nil
       end 
-      result 
+       found_state
   end 
   
 end 
