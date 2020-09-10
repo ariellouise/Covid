@@ -92,7 +92,7 @@ class State_menu
   def find_by_name(state_name)
       result = all.find {|state| state.name.downcase == state_name}
       if result 
-         puts " Your state #{state_name} has #{state.total_cases} total cases, #{state.total_deaths} total deaths, and #{state.total_recoveries} total recoveries." 
+         puts " Your state #{state_name} has #{state_total_cases} total cases, #{state_total_deaths} total deaths, and #{state_total_recoveries} total recoveries." 
          puts " "
       else 
          puts "#{state_name} does not exist."
@@ -101,8 +101,6 @@ class State_menu
          input != 'exit' ? find_by_name(input) : nil
       end 
       result 
-    end 
   end 
-  
   
 end 
