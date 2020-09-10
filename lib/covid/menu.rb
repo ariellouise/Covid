@@ -44,8 +44,6 @@ class Menu
     when "2"
       @state_menu.find_by_name
     when "3"
-      State_menu.new.find_by_name
-    when "3"
       puts "Total Covid Cases by state:"
       State.all.each { |n| n.show_total_cases }
     when "4"
@@ -90,6 +88,8 @@ class State_menu
       state_name = gets.strip.downcase.to_str
       found_state = State.all.find {|state| state.name.downcase == state_name}
       if found_state 
+         puts " "
+         puts " "
          puts " Your state #{found_state.name} has #{found_state.total_cases} total cases, #{found_state.total_deaths} total deaths, and #{found_state.total_recoveries} total recoveries." 
          puts " "
       else 
