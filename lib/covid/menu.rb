@@ -70,11 +70,12 @@ class Menu
     puts " "
   end 
   
-  
+  #scrapes state information
   def scrape
     Scraper.scrape_states
   end 
   
+  #returns a numbered list of each state that we can scrape available data from.
   def list_states
     State.all.each_with_index  do |state, i|
       puts " #{i+1}. #{state.name}  "
