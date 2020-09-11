@@ -11,7 +11,7 @@ class State
     @@states.push(self)
   end 
   
-  def self.all
+  def self.all #gives access to the object states 
     @@states
   end
   
