@@ -3,7 +3,7 @@ class State
   attr_accessor :name, :total_cases, :total_deaths, :total_recoveries
   @@states = []
   
-  def initialize(name, total_cases, total_deaths, total_recoveries)
+  def initialize(name, total_cases, total_deaths, total_recoveries) #creates a new instance of itself with .new, having all these properties(attributes)
     @name = name
     @total_cases = total_cases
     @total_deaths = total_deaths
