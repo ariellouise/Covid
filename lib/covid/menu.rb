@@ -87,20 +87,20 @@ end
 
 class State_menu
   
-  def find_by_name
+  def find_by_name 
       puts "Please enter the state name you like to find"
-      state_name = gets.strip.downcase.to_str
+      state_name = gets.strip.downcase.to_str #like chomp, cuts off the line break
       found_state = State.all.find {|state| state.name.downcase == state_name}
       if found_state 
          puts " "
          puts " "
-         puts " Your state #{found_state.name} has #{found_state.total_cases} total cases, #{found_state.total_deaths} total deaths, and #{found_state.total_recoveries} total recoveries." 
+         puts " Your state #{found_state.name} has #{found_state.total_cases} total cases, #{found_state.total_deaths} total deaths, and #{found_state.total_recoveries} total recoveries." # dot notation asks the object to do something
          puts " "
       else 
          puts "#{state_name} does not exist."
          puts "Please enter a valid state name."
          input = gets.strip.downcase.to_str
-         input != 'exit' ? find_by_name(input) : nil
+         input != 'exit' ? find_by_name(input) : nil #empty value 
       end 
        found_state
   end 
