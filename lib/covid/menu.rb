@@ -106,3 +106,5 @@ class State_menu
   end 
   
 end 
+
+#local variable is the variable defined inside one method (where dot notation tells it to do something)
