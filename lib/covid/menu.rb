@@ -1,32 +1,34 @@
 class Menu 
 
-  
+  #greets user, scrapes the data, and then runs the command line
   def start 
-    @state_menu = State_menu.new
+    @state_menu = State_menu.new #This makes option 2 work because it creates a new object
     greeting
     menu
     scrape
     while menu != 'exit'
     end
     end_program
-  
   end 
   
+  #greets user 
   def greeting 
     puts "Welcome to the Covid-19 Statistic CLI."
     scrape
   end 
   
+  #display menu which returns user input
   def menu
     puts " "
     puts "Please choose an option:" 
     puts " "
-    list_options
+    list_options #
     input = gets.strip.downcase
-    choose_option(input)
+    choose_option(input) 
     return input
   end 
   
+  #prints out a menu
   def list_options
     puts "What statistics are you interested in?"
     puts "1. See a list of states with statistics."
@@ -37,21 +39,22 @@ class Menu
     puts "6. Exit program."
   end 
   
+  #runs user specified task from their input 
   def choose_option(option)
     case option
     when "1"
-      self.list_states
+      self.list_states #passes through data 
     when "2"
-      @state_menu.find_by_name
+      @state_menu.find_by_name 
     when "3"
       puts "Total Covid Cases by state:"
-      State.all.each { |n| n.show_total_cases }
+      State.all.each { |name| name.show_total_cases }
     when "4"
       puts "Total Covid Deaths by state:"
-      State.all.each { |n| n.show_total_deaths }
+      State.all.each { |name| name.show_total_deaths }
     when "5"
       puts "Total Covid Recoveries by state:"
-      State.all.each { |n| n.show_total_recoveries }
+      State.all.each { |name| name.show_total_recoveries }
     when "6"
       end_program
       exit
